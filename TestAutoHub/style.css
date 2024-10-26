@@ -1,0 +1,345 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure body uses full height */
+body {
+  background: linear-gradient(90deg, #000000, #3533cd);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;    
+}
+
+/* Background video container */
+.background-video {
+  position: absolute; /* Fix video to the background */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /* Send video to the back */
+  overflow: hidden;
+}
+
+.background-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure video covers the background */
+}
+
+/* Header styling */
+header {
+  background: black;
+  padding: 10px;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.logo-container:hover {
+  background-color: transparent;
+}
+/* ================== Footer Universe ================== */
+.menu {
+  /* font-size: 16px; */
+  line-height: 1.6;
+  color: #000000;
+  width: fit-content;
+  display: flex;
+  list-style: none;
+}
+.menu a {
+  /* text-decoration: none; */
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+.menu .link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  /* padding: 12px 36px; */
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu .link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;    
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu .link svg {
+  width: 14px;
+  height: 14px;
+  fill: #000000;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu .item {
+  position: relative;
+}
+.menu .item .submenu {
+  background: rgba(255, 255, 255, 0.1);/*Background-Blur*/
+  backdrop-filter: blur(4.5px);
+  box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.6);
+  font-weight: 700;    
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 100%;
+  border-radius: 0 0 16px 16px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-12px);
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 1;
+  pointer-events: none;
+  list-style: none;
+}
+.menu .item:hover .submenu {    
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+  border-top: transparent;
+  border-color: whitesmoke;
+}
+.menu .item:hover .link {
+  color: black;
+  border-radius: 16px 16px 0 0;
+}
+.menu .item:hover .link::after {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+.menu .item:hover .link svg {
+  fill: #ffffff;
+  transform: rotate(-180deg);
+}
+.submenu .submenu-item {    
+  width: 100%;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.submenu .submenu-link {
+  text-decoration: none;    
+  display: block;
+  padding: 12px 24px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.submenu .submenu-item:last-child .submenu-link {
+  border-bottom: none;
+}
+.submenu .submenu-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: -1;
+  transform-origin: left;
+  transition: transform 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.submenu .submenu-link:hover:before {
+  transform: scaleX(1);
+  transform-origin: right;
+}
+.submenu .submenu-link:hover {
+  color: #ffffff;
+}
+
+
+/* ================== Footer Universe ================== */
+
+/* Basic styling */
+.ul1 {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  list-style-type: none;
+}
+
+.li1-Acc {
+  position: relative; /* For positioning the dropdown */
+  margin-left: auto;         /* Push Account⚙ to the right */
+}
+
+.account-dropdown {
+  display: none; /* Hide by default */
+  position: absolute;
+  top: 100%; /* Place below the Account⚙ button */
+  right: 0;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.li1-Acc:hover .account-dropdown {
+  display: block; /* Show on hover */
+}
+
+.input button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #7D8590;
+  transition: background-color 0.3s;
+}
+
+.input button:hover {
+  background-color: #f0f0f0;
+}
+
+
+.li1 {
+  padding: 10px;
+  position: relative;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+/* Ensure Account⚙ keeps its original color and background */
+.li1-Acc a {
+  color: white;                /* Set the desired color */
+  background-color: black; /* No background */
+  text-decoration: none;        /* Remove underline */
+}
+
+.li1-Acc:hover a {   
+  color: white !important;      /* Prevent color change */
+  background-color: black !important; Prevent background change
+}
+
+
+.li1:hover {
+  background-color: white;
+  color: black;
+}
+
+.dl1 {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.877);
+  z-index: 1;
+}
+
+.li1:hover .dl1 {
+  display: block;
+}
+
+/* .li1-Acc {
+  width: 2px;
+  height: 2px;
+  position: relative;
+  margin-left: auto;
+} */
+
+.li1-Acc a {
+ width: 30px;
+height: 30px;  /* Maintain aspect ratio */  
+overflow: hidden;  /* Ensure content overflow is hidden */
+display: inline-block;
+width: 100px;
+height: 40px;
+  
+}
+
+/* .li1-Acc:hover a {
+  color: white;
+  background-color: black;
+  text-decoration: none;
+} */
+
+/* .li1-Acc:hover {
+  /* Prevent background color change on hover */
+  background-color: transparent;
+} */
+
+.ul1 .li1:hover a {
+  color: black; /* Change the text color when hovered */
+}
+
+
+.ul1 .li1 a {
+  color: white;    
+}
+
+.ul1 .li1 a:hover {
+  color: black;
+}
+
+/* Footer styling */
+footer {
+  background-color: black;
+  color: bisque;
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+/* Overlay text styling */
+.overlay-text {
+  text-align: center;
+  color: wheat;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+  margin-top: 50px; /* Adjust for visibility */
+}
+
+.mp1 {
+  font-size: 50px;
+}
+
+.mp2 {
+  font-size: 40px;
+  margin-top: 10px;
+}   
+
+/* Ensure main content takes available space */
+main {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 50px;
+  min-height: 0;
+}
